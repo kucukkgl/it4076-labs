@@ -1,14 +1,14 @@
 ### **Lab-nmap**
 
 1. **Explain the usage of `-T4` with its overall name in this command:**
-   ```bash
+   ```
    nmap -A -T4 scanme.nmap.org
    ```
    - **Question:** What does the `-T4` option do in this command, and what is its overall purpose in Nmap scanning?
 
 2. **Perform a "no scan" with Nmap on 30 hosts:**
    - **Question:** Follow the rule of staying as stealthy as possible in penetration testing. Perform a "no scan" on 30 hosts in your network using the following Nmap command with CIDR and netmasking:
-     ```bash
+     ```
      nmap -ns <CIDR> 
      ```
      Explain your approach and the result of the scan.

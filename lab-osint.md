@@ -8,16 +8,16 @@ This lab focuses on conducting passive reconnaissance using OSINT (Open Source I
 #### **Tasks:**
 
 1. **Run a Whois Command on `nmap.org`:**
-   - Run the following command to gather Whois information on `nmap.org`.
+   - Run the following command on the Kali terminal to gather Whois information on `nmap.org`.
      - **Command:**  
-       ```bash
+       ```
        whois nmap.org
        ```
    - **Deliverables:**  
      - Paste a screenshot of all the information you received.
 
 2. **Repeat the Whois Scan for the Following Domains:**
-   - Run Whois scans for the following domains and provide screenshots of useful information. 
+   - Run Whois scans on the Kali terminal for the following domains and provide screenshots of useful information. 
      - **Domains to scan:**
        - `Arrests.com`
        - `Brittanica.com`
@@ -28,10 +28,10 @@ This lab focuses on conducting passive reconnaissance using OSINT (Open Source I
    - **Deliverables:**  
      - Provide screenshots of each Whois result.
 
-3. **Perform a NSLookup on the `runzero.com` Domain:**
+3. **Perform a NSLookup on the Kali Terminal `runzero.com` Domain:**
    - Run a DNS lookup on the `runzero.com` domain.
      - **Command:**  
-       ```bash
+       ```
        nslookup runzero.com
        ```
    - **Questions:**  
@@ -47,7 +47,7 @@ This lab focuses on conducting passive reconnaissance using OSINT (Open Source I
      - Provide screenshots showing the information for three tools.
 
 5. **Google Dorks Search:**
-   - Using Google Dorks, run a search and narrow the results to only include:
+   - Using Google Dorks, on Kali browser or PC, run a search and narrow the results to only include:
      - All `.gov` TLDs
      - The term "password" inside the body of the page
      - The term "reset" in the URL
@@ -70,7 +70,7 @@ This lab focuses on conducting passive reconnaissance using OSINT (Open Source I
      - Provide a written explanation.
 
 9. **Shodan Search for Ubuntu Server with Open Port 22 in Cincinnati, OH:**
-   - Run a search on Shodan to return results that have an Ubuntu server running with port 22 open and based in Cincinnati, OH.
+   - Run a search on Shodan on PC or Kali browser to return results that have an Ubuntu server running with port 22 open and based in Cincinnati, OH.
    - **Deliverables:**  
      - Paste a screenshot of your results.
 

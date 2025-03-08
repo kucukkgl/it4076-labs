@@ -56,6 +56,7 @@ ping <Pentester Lab IP Address>
 2. In the address bar, enter the IP address of the Pentester Lab server:  
    ```http://<Pentester Lab IP Address>```  
 
+   
 ### **5. Start Exploring**  
 Familiarize yourself with the web application hosted on the ISO server. This will be your **testing ground** for SQL injection techniques.  
 
@@ -63,7 +64,10 @@ Familiarize yourself with the web application hosted on the ISO server. This wil
 
 ## **SQL Injection Techniques**  
 
-### **Example 1: Basic SQL Injection Using `OR`**  
+**Goto the first exercise**
+
+
+### **1 Basic SQL Injection Using `OR`**  
 
 #### **Expected SQL Query**:  
 **Original Query**:  
@@ -88,7 +92,7 @@ SELECT id, name, age FROM table WHERE name='root' OR '1'='1' #'
 
 ---
 
-### **Example 2: Using `UNION SELECT` to Combine Queries**  
+### **2 Using `UNION SELECT` to Combine Queries**  
 
 #### **Injected URL**:  
 **Payload**:  
@@ -117,7 +121,7 @@ SELECT id, name, age FROM table WHERE name='root' UNION SELECT null #'
 
 ---
 
-### **Example 3: Using `ORDER BY` to Find Column Numbers**  
+### **3 Using `ORDER BY` to Find Column Numbers**  
 
 #### **Testing Column Numbers**:  
 - **Invalid Column**:  
@@ -131,7 +135,7 @@ SELECT id, name, age FROM table WHERE name='root' UNION SELECT null #'
 
 ---
 
-### **Example 4: Extracting System Database Information**  
+### **4 Extracting System Database Information**  
 
 #### **Querying Database Version**:  
 **Payload**:  

@@ -9,7 +9,7 @@
 2. **Perform a "no scan" with Nmap on 30 hosts:**
    - **Question:** Follow the rule of staying as stealthy as possible in penetration testing. Perform a "no scan" on 30 hosts in your network using the following Nmap command with CIDR and netmasking:
      ```
-     nmap -ns <CIDR> 
+     nmap -sn <CIDR> 
      ```
      Explain your approach and the result of the scan.
 
